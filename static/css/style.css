@@ -1,0 +1,29 @@
+.jumbotron {
+    background-image: url("../images/polarbear-ice.png");
+    border-radius: 0;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+h2 {
+    padding-top: 10%;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px #000;
+    line-height: 60px;
+}
+
+.front-page-button {
+    background-color: red;
+    text-shadow: 1px 1px #000;
+    text-align: center;
+    margin-top: 9%;
+    width: 270px;
+    height: 75px;
+    font-size: 30px;
+}

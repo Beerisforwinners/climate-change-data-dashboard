@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Climate Change Data Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Climate Change Data Dashboard</title>
 
-        <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
-        <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+<link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="static/css/style.css" type="text/css" />
+<link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
 
-        <script type="text/javascript" src="static/js/d3.min.js"></script>
-        <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
-        <script type="text/javascript" src="static/js/dc.min.js"></script>
-        <script type="text/javascript" src="static/js/queue.min.js"></script>
-    </head>
+<script type="text/javascript" src="static/js/d3.min.js"></script>
+<script type="text/javascript" src="static/js/crossfilter.min.js"></script>
+<script type="text/javascript" src="static/js/dc.min.js"></script>
+<script type="text/javascript" src="static/js/queue.min.js"></script>
+</head>
 </head>
 
 <body>
-    
-    
+
+    <div class="jumbotron">
+        <div class="container context text-center">
+        <h2>According to the latest UN report, there are only <strong>11 years</strong><br>
+            remaining before the devestating effects of climate change are
+            <br><strong>irreversible</strong>.</h2>
+        <button class="btn front-page-button">See the truth <strong>now</strong></button>
+        </div>
+    </div>
 
     <table class="container">
         <tr class="countdown">
@@ -34,39 +42,39 @@
         </tr>
     </table>
 
-<script>
-    function countdown(){
-        var startDate = new Date();
-        var endDate = new Date('March 28, 2030 00:00:00');
-        
-        var startTime = startDate.getTime();
-        var endTime = endDate.getTime();
-        
-        var timeRemaining = endTime - startTime;
-        
-        var seconds = Math.floor(timeRemaining/1000);
-        var minutes = Math.floor(seconds/60);
-        var hours = Math.floor(minutes/60);
-        var days = Math.floor(hours/24);
-        
-        hours = hours % 24;
-        minutes%=60;
-        seconds%=60;
-        
-        hours = (hours<10) ? '0'+hours : hours;
-        minutes = (minutes<10) ? '0'+minutes : minutes;
-        seconds = (seconds<10) ? '0'+seconds : seconds;
-        
-        document.getElementById('days').innerHTML = days;
-        document.getElementById('hours').innerHTML = hours;
-        document.getElementById('minutes').innerHTML = minutes;
-        document.getElementById('seconds').innerHTML = seconds;
-        
-        setTimeout(countdown, 1000);
-    }
-    
-    countdown();
-</script>
+    <script>
+        function countdown() {
+            var startDate = new Date();
+            var endDate = new Date('March 28, 2030 00:00:00');
+
+            var startTime = startDate.getTime();
+            var endTime = endDate.getTime();
+
+            var timeRemaining = endTime - startTime;
+
+            var seconds = Math.floor(timeRemaining / 1000);
+            var minutes = Math.floor(seconds / 60);
+            var hours = Math.floor(minutes / 60);
+            var days = Math.floor(hours / 24);
+
+            hours = hours % 24;
+            minutes %= 60;
+            seconds %= 60;
+
+            hours = (hours < 10) ? '0' + hours : hours;
+            minutes = (minutes < 10) ? '0' + minutes : minutes;
+            seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            setTimeout(countdown, 1000);
+        }
+
+        countdown();
+    </script>
 </body>
 
 </html>

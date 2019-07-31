@@ -29,12 +29,16 @@
 
     <table class="container">
         <tr class="countdown">
+            <td id="years"></td>
+            <td id="months"></td>
             <td id="days"></td>
             <td id="hours"></td>
             <td id="minutes"></td>
             <td id="seconds"></td>
         </tr>
         <tr>
+            <td>Years</td>
+            <td>Months</td>
             <td>Days</td>
             <td>Hours</td>
             <td>Minutes</td>
@@ -56,15 +60,23 @@
             var minutes = Math.floor(seconds / 60);
             var hours = Math.floor(minutes / 60);
             var days = Math.floor(hours / 24);
+            var months = Math.floor(days / 30.44); // Use average number of days in month
+            var years = Math.floor(months / 12);
 
+            months = months % 12;
+            days = Math.floor(days % 30.44); // Use average number of days in month
             hours = hours % 24;
             minutes %= 60;
             seconds %= 60;
 
+            months = (months < 10) ? '0' + months : months;
+            days = (days < 10) ? '0' + days : days;
             hours = (hours < 10) ? '0' + hours : hours;
             minutes = (minutes < 10) ? '0' + minutes : minutes;
             seconds = (seconds < 10) ? '0' + seconds : seconds;
 
+            document.getElementById('years').innerHTML = years;
+            document.getElementById('months').innerHTML = months;
             document.getElementById('days').innerHTML = days;
             document.getElementById('hours').innerHTML = hours;
             document.getElementById('minutes').innerHTML = minutes;
